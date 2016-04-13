@@ -496,15 +496,9 @@ function ElementAttributes(source){
 }
 ElementAttributes.prototype = {
 	setTagName:function(tagName){
-		if(!tagNamePattern.test(tagName)){
-			throw new Error('invalid tagName:'+tagName)
-		}
 		this.tagName = tagName
 	},
 	add:function(qName,value,offset){
-		if(!tagNamePattern.test(qName)){
-			throw new Error('invalid attribute:'+qName)
-		}
 		this[this.length++] = {qName:qName,value:value,offset:offset}
 	},
 	length:0,
